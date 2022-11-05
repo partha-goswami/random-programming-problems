@@ -1,0 +1,27 @@
+# The problem is to find the maximum and minimum elements in an array
+def findMinimumAndMaximum(arr):
+    if len(arr) <= 0:
+        return [-1, -1]
+    elif len(arr) == 1:
+        return [arr[0], arr[1]]
+    else:
+        minimum_element, maximum_element = -1, -1
+        for i in range(len(arr)):
+            if arr[i] > maximum_element:
+                if minimum_element == -1:
+                    minimum_element = maximum_element
+                maximum_element = arr[i]
+            elif minimum_element == -1 and arr[i] > minimum_element:
+                minimum_element = arr[i]
+            elif arr[i] < minimum_element:
+                minimum_element = arr[i]
+        return [minimum_element,maximum_element]
+
+print(findMinimumAndMaximum([1,2,3,4]))
+print(findMinimumAndMaximum([2,3,6,1]))
+print(findMinimumAndMaximum([2,2,2,2]))
+print(findMinimumAndMaximum([6,3,2,1]))
+print(findMinimumAndMaximum([2,3,1,6]))
+print(findMinimumAndMaximum([2,2]))
+print(findMinimumAndMaximum([2,3,6,6,1]))
+        

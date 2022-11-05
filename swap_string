@@ -1,0 +1,7 @@
+# The problem is to reverse a string
+def reverseString(s):
+    if len(s) <= 1:
+        return s
+    return s[-1] + reverseString(s[0: -1])
+
+print(reverseString('Today is a sunny day'))

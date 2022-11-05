@@ -1,0 +1,20 @@
+# Problem is to find the second maximum element in ana array
+def findSecondMax(arr):
+    if len(arr) <= 1:
+        return -1
+    elif len(arr) == 2 and arr[0] == arr[1]:
+        return -1
+    else:
+        #print('Else')
+        maximum_element = -1
+        second_maximum_element = -1
+        for i in range(len(arr)):
+            #print(arr[i], maximum_element)
+            if arr[i] > maximum_element:
+                second_maximum_element = maximum_element
+                maximum_element = arr[i]
+            elif second_maximum_element == -1:
+                second_maximum_element = arr[i]
+        return second_maximum_element
+
+print(findSecondMax([1,2,3,4,5,6,7]))
